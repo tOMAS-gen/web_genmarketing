@@ -6,6 +6,11 @@ export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
 export default async function Image() {
+  const [montserratMedium, montserratSemiBold] = await Promise.all([
+    fetch('https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew-.ttf').then((r) => r.arrayBuffer()),
+    fetch('https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w-.ttf').then((r) => r.arrayBuffer()),
+  ]);
+
   return new ImageResponse(
     (
       <div
@@ -16,7 +21,7 @@ export default async function Image() {
           display: 'flex',
           position: 'relative',
           overflow: 'hidden',
-          fontFamily: 'sans-serif',
+          fontFamily: 'Montserrat, sans-serif',
         }}
       >
         {/* Background gradient mesh */}
@@ -79,7 +84,7 @@ export default async function Image() {
             justifyContent: 'center',
             padding: '80px 90px',
             position: 'relative',
-            zIndex: 10,
+            zIndex: '10',
             width: '100%',
           }}
         >
@@ -94,7 +99,7 @@ export default async function Image() {
               background: 'rgba(147,51,234,0.25)',
               border: '1.5px solid rgba(147,51,234,0.5)',
               marginBottom: '40px',
-              width: 'fit-content',
+              alignSelf: 'flex-start',
             }}
           >
             <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#a855f7' }} />
@@ -105,10 +110,10 @@ export default async function Image() {
 
           {/* Logo / Title */}
           <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '20px' }}>
-            <span style={{ fontSize: '86px', fontWeight: 900, color: '#c084fc', lineHeight: 1 }}>
+            <span style={{ fontSize: '86px', fontWeight: 600, color: '#c084fc', lineHeight: 1 }}>
               ›gen
             </span>
-            <span style={{ fontSize: '86px', fontWeight: 700, color: '#ffffff', lineHeight: 1 }}>
+            <span style={{ fontSize: '86px', fontWeight: 500, color: '#ffffff', lineHeight: 1 }}>
               marketing
             </span>
           </div>
@@ -135,6 +140,12 @@ export default async function Image() {
         </div>
       </div>
     ),
-    { ...size }
+    {
+      ...size,
+      fonts: [
+        { name: 'Montserrat', data: montserratMedium, weight: 500, style: 'normal' as const },
+        { name: 'Montserrat', data: montserratSemiBold, weight: 600, style: 'normal' as const },
+      ],
+    }
   );
 }
