@@ -1,0 +1,8 @@
+services:
+  web:
+    image: ghcr.io/tomas-gen/web_genmarketing:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_SITE_URL=https://genmarketing.com.ar
+    restart: unless-stopped

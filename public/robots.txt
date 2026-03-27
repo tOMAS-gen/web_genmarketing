@@ -1,0 +1,44 @@
+# robots.txt for ›genmarketing
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.env
+
+Sitemap: https://genmarketing.com.ar/sitemap.xml
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# AI search bots (allow for GEO visibility)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+# Rate-limit aggressive SEO crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
