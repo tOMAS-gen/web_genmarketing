@@ -10,7 +10,7 @@ export default async function Image() {
     (
       <div
         style={{
-          background: 'linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 40%, #0f0f1a 100%)',
+          background: '#09090b',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -19,50 +19,39 @@ export default async function Image() {
           fontFamily: 'sans-serif',
         }}
       >
-        {/* Gradient orbs */}
+        {/* Background gradient mesh */}
         <div
           style={{
             position: 'absolute',
-            top: '-200px',
-            right: '100px',
-            width: '600px',
-            height: '600px',
-            background: 'radial-gradient(circle, rgba(147,51,234,0.4) 0%, rgba(147,51,234,0.1) 40%, transparent 70%)',
+            top: '-100px',
+            left: '-100px',
+            width: '700px',
+            height: '700px',
+            background: 'radial-gradient(circle, rgba(147,51,234,0.35) 0%, transparent 65%)',
             borderRadius: '50%',
           }}
         />
         <div
           style={{
             position: 'absolute',
-            bottom: '-250px',
-            left: '-100px',
+            bottom: '-150px',
+            right: '-50px',
             width: '500px',
             height: '500px',
-            background: 'radial-gradient(circle, rgba(192,132,252,0.2) 0%, transparent 65%)',
-            borderRadius: '50%',
-          }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            top: '200px',
-            right: '-100px',
-            width: '400px',
-            height: '400px',
-            background: 'radial-gradient(circle, rgba(126,34,206,0.15) 0%, transparent 65%)',
+            background: 'radial-gradient(circle, rgba(126,34,206,0.25) 0%, transparent 65%)',
             borderRadius: '50%',
           }}
         />
 
-        {/* Decorative line accent */}
+        {/* Grid pattern overlay */}
         <div
           style={{
             position: 'absolute',
-            left: '90px',
-            top: '0',
-            bottom: '0',
-            width: '2px',
-            background: 'linear-gradient(to bottom, transparent 10%, rgba(147,51,234,0.4) 40%, rgba(192,132,252,0.2) 70%, transparent 90%)',
+            inset: 0,
+            opacity: 0.15,
+            backgroundImage:
+              'linear-gradient(rgba(147,51,234,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(147,51,234,0.3) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
           }}
         />
 
@@ -70,17 +59,16 @@ export default async function Image() {
         <div
           style={{
             position: 'absolute',
-            right: '60px',
-            bottom: '-30px',
-            fontSize: '420px',
+            right: '-40px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            fontSize: '500px',
             fontWeight: 900,
-            lineHeight: 0.8,
-            background: 'linear-gradient(180deg, rgba(147,51,234,0.15) 0%, rgba(147,51,234,0.03) 100%)',
-            backgroundClip: 'text',
-            color: 'rgba(147,51,234,0.12)',
+            color: 'rgba(147,51,234,0.08)',
+            lineHeight: 1,
           }}
         >
-          ›g
+          ›
         </div>
 
         {/* Content */}
@@ -89,66 +77,60 @@ export default async function Image() {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            padding: '80px 90px 80px 120px',
+            padding: '80px 90px',
             position: 'relative',
             zIndex: 10,
             width: '100%',
           }}
         >
-          {/* Logo */}
-          <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '32px' }}>
-            <span style={{ fontSize: '96px', fontWeight: 900, color: '#c084fc', lineHeight: 1, letterSpacing: '-0.02em' }}>
-              ›gen
-            </span>
-            <span style={{ fontSize: '96px', fontWeight: 700, color: '#ffffff', lineHeight: 1, letterSpacing: '-0.02em' }}>
-              marketing
-            </span>
-          </div>
-
-          {/* Tagline */}
-          <div
-            style={{
-              fontSize: '36px',
-              fontWeight: 500,
-              color: '#a3a3a3',
-              lineHeight: 1.35,
-              maxWidth: '600px',
-              marginBottom: '60px',
-            }}
-          >
-            Diseño web, redes sociales y branding
-            <span style={{ color: '#c084fc' }}> que generan resultados.</span>
-          </div>
-
-          {/* Bottom info */}
+          {/* Badge */}
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '16px',
-              padding: '16px 24px',
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: '12px',
+              gap: '10px',
+              padding: '8px 20px',
+              borderRadius: '999px',
+              background: 'rgba(147,51,234,0.25)',
+              border: '1.5px solid rgba(147,51,234,0.5)',
+              marginBottom: '40px',
               width: 'fit-content',
             }}
           >
-            <div
-              style={{
-                width: '8px',
-                height: '8px',
-                borderRadius: '50%',
-                background: '#22c55e',
-                boxShadow: '0 0 8px rgba(34,197,94,0.5)',
-              }}
-            />
-            <span style={{ color: '#d4d4d4', fontSize: '18px', fontWeight: 600 }}>
-              genmarketing.com.ar
+            <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#a855f7' }} />
+            <span style={{ color: '#c4b5fd', fontSize: '16px', fontWeight: 700, letterSpacing: '0.15em' }}>
+              AGENCIA DE MARKETING DIGITAL
             </span>
-            <div style={{ width: '1px', height: '20px', background: 'rgba(255,255,255,0.1)' }} />
-            <span style={{ color: '#737373', fontSize: '16px', fontWeight: 500 }}>
-              Mendoza, Argentina
+          </div>
+
+          {/* Logo / Title */}
+          <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '20px' }}>
+            <span style={{ fontSize: '86px', fontWeight: 900, color: '#c084fc', lineHeight: 1 }}>
+              ›gen
             </span>
+            <span style={{ fontSize: '86px', fontWeight: 700, color: '#ffffff', lineHeight: 1 }}>
+              marketing
+            </span>
+          </div>
+
+          {/* Subtitle */}
+          <div style={{ fontSize: '32px', color: '#a3a3a3', lineHeight: 1.4, maxWidth: '650px', marginBottom: '50px' }}>
+            Hacemos crecer tu marca en el mundo digital.
+          </div>
+
+          {/* Bottom bar */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '24px',
+              paddingTop: '28px',
+              borderTop: '1px solid rgba(255,255,255,0.1)',
+            }}
+          >
+            <span style={{ color: '#9333ea', fontSize: '18px', fontWeight: 700 }}>genmarketing.com.ar</span>
+            <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#525252' }} />
+            <span style={{ color: '#525252', fontSize: '16px', fontWeight: 600 }}>Mendoza, Argentina</span>
           </div>
         </div>
       </div>
