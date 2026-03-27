@@ -1,16 +1,19 @@
-import { SectionTitle } from '@/components/ui/SectionTitle';
+import type { Metadata } from 'next';
 import { CONTACT_INFO } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  title: 'Política de Privacidad',
+  description: 'Política de privacidad de ›genmarketing. Conocé cómo recopilamos, usamos y protegemos tu información personal.',
+  alternates: { canonical: 'https://genmarketing.com.ar/politica-privacidad' },
+};
 
 export default function PoliticaPrivacidadPage() {
   return (
     <main className="py-20 md:py-32">
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-sm md:prose lg:prose-lg max-w-none">
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <SectionTitle
-            title="Política de Privacidad"
-            subtitle="›genmarketing - Última actualización: 2024"
-            align="left"
-          />
+          <h1 className="text-4xl md:text-5xl font-black text-black leading-tight mb-2">Política de Privacidad</h1>
+          <p className="text-neutral-400 text-sm">›genmarketing — Última actualización: 2024</p>
         </div>
 
         <div className="space-y-8 text-neutral-700">

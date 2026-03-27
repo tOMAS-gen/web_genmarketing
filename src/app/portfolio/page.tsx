@@ -72,7 +72,7 @@ export default function PortfolioPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
 
                       {/* Image */}
-                      <div className="relative h-64 md:h-80 overflow-hidden">
+                      <div className="relative h-64 md:h-auto md:min-h-80 overflow-hidden">
                         <Image
                           src={project.image}
                           alt={project.title}
@@ -82,7 +82,7 @@ export default function PortfolioPage() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-neutral-900/60 md:block hidden" />
                         {/* number badge */}
-                        <div className="absolute top-4 left-4 text-xs font-black text-white/20 tracking-widest">
+                        <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-sm rounded-md px-2 py-1 text-xs font-black text-white/70 tracking-widest">
                           {String(i + 1).padStart(2, '0')}
                         </div>
                       </div>

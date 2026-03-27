@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
@@ -14,12 +15,18 @@ interface MobileMenuProps {
 }
 
 export function MobileMenu({ isOpen, onClose, navLinks, pathname }: MobileMenuProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
+
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <>
@@ -44,8 +51,8 @@ export function MobileMenu({ isOpen, onClose, navLinks, pathname }: MobileMenuPr
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-white/5">
               <div className="flex items-baseline gap-0">
-                <span className="text-xl font-semibold text-purple-400 pl-0.5" style={{ fontFamily: "'Montserrat', sans-serif" }}>›gen</span>
-                <span className="text-xl font-medium text-white" style={{ fontFamily: "'Montserrat', sans-serif" }}>marketing</span>
+                <span className="text-xl font-semibold text-purple-400 pl-0.5">›gen</span>
+                <span className="text-xl font-medium text-white">marketing</span>
               </div>
               <button
                 onClick={onClose}
@@ -95,6 +102,7 @@ export function MobileMenu({ isOpen, onClose, navLinks, pathname }: MobileMenuPr
           </motion.div>
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }

@@ -10,80 +10,146 @@ export default async function Image() {
     (
       <div
         style={{
-          background: '#09090b',
+          background: 'linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 40%, #0f0f1a 100%)',
           width: '100%',
           height: '100%',
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          justifyContent: 'center',
-          padding: '80px',
-          fontFamily: 'sans-serif',
           position: 'relative',
+          overflow: 'hidden',
+          fontFamily: 'sans-serif',
         }}
       >
-        {/* Purple glow */}
+        {/* Gradient orbs */}
         <div
           style={{
             position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
+            top: '-200px',
+            right: '100px',
             width: '600px',
-            height: '300px',
-            background: 'rgba(147,51,234,0.25)',
+            height: '600px',
+            background: 'radial-gradient(circle, rgba(147,51,234,0.4) 0%, rgba(147,51,234,0.1) 40%, transparent 70%)',
             borderRadius: '50%',
-            filter: 'blur(80px)',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '-250px',
+            left: '-100px',
+            width: '500px',
+            height: '500px',
+            background: 'radial-gradient(circle, rgba(192,132,252,0.2) 0%, transparent 65%)',
+            borderRadius: '50%',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            top: '200px',
+            right: '-100px',
+            width: '400px',
+            height: '400px',
+            background: 'radial-gradient(circle, rgba(126,34,206,0.15) 0%, transparent 65%)',
+            borderRadius: '50%',
           }}
         />
 
-        {/* Badge */}
+        {/* Decorative line accent */}
+        <div
+          style={{
+            position: 'absolute',
+            left: '90px',
+            top: '0',
+            bottom: '0',
+            width: '2px',
+            background: 'linear-gradient(to bottom, transparent 10%, rgba(147,51,234,0.4) 40%, rgba(192,132,252,0.2) 70%, transparent 90%)',
+          }}
+        />
+
+        {/* Large decorative › */}
+        <div
+          style={{
+            position: 'absolute',
+            right: '60px',
+            bottom: '-30px',
+            fontSize: '420px',
+            fontWeight: 900,
+            lineHeight: 0.8,
+            background: 'linear-gradient(180deg, rgba(147,51,234,0.15) 0%, rgba(147,51,234,0.03) 100%)',
+            backgroundClip: 'text',
+            color: 'rgba(147,51,234,0.12)',
+          }}
+        >
+          ›g
+        </div>
+
+        {/* Content */}
         <div
           style={{
             display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '6px 16px',
-            borderRadius: '999px',
-            background: 'rgba(147,51,234,0.2)',
-            border: '1px solid rgba(147,51,234,0.4)',
-            marginBottom: '32px',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            padding: '80px 90px 80px 120px',
+            position: 'relative',
+            zIndex: 10,
+            width: '100%',
           }}
         >
-          <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#a855f7' }} />
-          <span style={{ color: '#c4b5fd', fontSize: '14px', fontWeight: 600, letterSpacing: '0.1em' }}>
-            AGENCIA DIGITAL · MENDOZA, ARGENTINA
-          </span>
-        </div>
+          {/* Logo */}
+          <div style={{ display: 'flex', alignItems: 'baseline', marginBottom: '32px' }}>
+            <span style={{ fontSize: '96px', fontWeight: 900, color: '#c084fc', lineHeight: 1, letterSpacing: '-0.02em' }}>
+              ›gen
+            </span>
+            <span style={{ fontSize: '96px', fontWeight: 700, color: '#ffffff', lineHeight: 1, letterSpacing: '-0.02em' }}>
+              marketing
+            </span>
+          </div>
 
-        {/* Title */}
-        <div style={{ fontSize: '72px', fontWeight: 900, color: 'white', lineHeight: 1, marginBottom: '24px' }}>
-          ›genmarketing
-        </div>
+          {/* Tagline */}
+          <div
+            style={{
+              fontSize: '36px',
+              fontWeight: 500,
+              color: '#a3a3a3',
+              lineHeight: 1.35,
+              maxWidth: '600px',
+              marginBottom: '60px',
+            }}
+          >
+            Diseño web, redes sociales y branding
+            <span style={{ color: '#c084fc' }}> que generan resultados.</span>
+          </div>
 
-        {/* Subtitle */}
-        <div style={{ fontSize: '28px', color: '#a3a3a3', maxWidth: '700px', lineHeight: 1.4 }}>
-          Hacemos crecer tu marca en el mundo digital.
-        </div>
-
-        {/* Services pills */}
-        <div style={{ display: 'flex', gap: '12px', marginTop: '48px', flexWrap: 'wrap' }}>
-          {['Diseño Web', 'Redes Sociales', 'Branding', 'SEO', 'Chatbot IA'].map((s) => (
+          {/* Bottom info */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '16px',
+              padding: '16px 24px',
+              background: 'rgba(255,255,255,0.04)',
+              border: '1px solid rgba(255,255,255,0.08)',
+              borderRadius: '12px',
+              width: 'fit-content',
+            }}
+          >
             <div
-              key={s}
               style={{
-                padding: '8px 20px',
-                borderRadius: '8px',
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                color: '#e5e5e5',
-                fontSize: '16px',
-                fontWeight: 600,
+                width: '8px',
+                height: '8px',
+                borderRadius: '50%',
+                background: '#22c55e',
+                boxShadow: '0 0 8px rgba(34,197,94,0.5)',
               }}
-            >
-              {s}
-            </div>
-          ))}
+            />
+            <span style={{ color: '#d4d4d4', fontSize: '18px', fontWeight: 600 }}>
+              genmarketing.com.ar
+            </span>
+            <div style={{ width: '1px', height: '20px', background: 'rgba(255,255,255,0.1)' }} />
+            <span style={{ color: '#737373', fontSize: '16px', fontWeight: 500 }}>
+              Mendoza, Argentina
+            </span>
+          </div>
         </div>
       </div>
     ),

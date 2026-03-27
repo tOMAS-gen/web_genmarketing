@@ -3,7 +3,6 @@ import { Hero } from '@/components/sections/Hero';
 import { Servicios } from '@/components/sections/Servicios';
 import { ComoFunciona } from '@/components/sections/ComoFunciona';
 import { Planes } from '@/components/sections/Planes';
-import { Testimonios } from '@/components/sections/Testimonios';
 import { SobreNosotros } from '@/components/sections/SobreNosotros';
 import { CTA } from '@/components/sections/CTA';
 
@@ -77,9 +76,8 @@ export default function Home() {
       />
       <Hero />
       <Servicios />
-      <ComoFunciona />
       <Planes />
-      <Testimonios />
+      <ComoFunciona />
       <SobreNosotros />
       <CTA />
     </>

@@ -7,16 +7,31 @@ const steps = [
     num: '01',
     title: 'Consultá',
     description: 'Contanos tu proyecto, objetivos y presupuesto. Sin costo, sin compromiso.',
+    details: [
+      'Reunión inicial por videollamada o WhatsApp',
+      'Relevamiento de tu marca y competencia',
+      'Definimos juntos los objetivos concretos',
+    ],
   },
   {
     num: '02',
     title: 'Diseñamos',
     description: 'Creamos una estrategia y propuesta personalizada para tu negocio en 24h.',
+    details: [
+      'Propuesta visual con bocetos y wireframes',
+      'Selección de colores, tipografías e imágenes',
+      'Revisiones hasta que quedes conforme',
+    ],
   },
   {
     num: '03',
     title: 'Lanzamos',
     description: 'Ejecutamos, medimos y optimizamos. Tu crecimiento digital comienza hoy.',
+    details: [
+      'Publicación con dominio, hosting y SSL incluido',
+      'Configuración de analytics y SEO',
+      'Soporte post-lanzamiento y capacitación',
+    ],
   },
 ];
 
@@ -58,9 +73,17 @@ export function ComoFunciona() {
               <h3 className="text-2xl font-black text-black mb-3 group-hover:text-purple-600 transition-colors duration-200">
                 {step.title}
               </h3>
-              <p className="text-neutral-400 text-sm leading-relaxed max-w-[260px]">
+              <p className="text-neutral-400 text-sm leading-relaxed max-w-[260px] mb-4">
                 {step.description}
               </p>
+              <ul className="space-y-2 max-w-[260px]">
+                {step.details.map((detail, di) => (
+                  <li key={di} className="flex items-start gap-2 text-neutral-500 text-xs leading-relaxed">
+                    <span className="text-purple-500 mt-0.5 flex-shrink-0">›</span>
+                    {detail}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

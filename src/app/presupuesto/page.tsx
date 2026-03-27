@@ -102,9 +102,9 @@ export default function PresupuestoPage() {
             <div>
               <h2 className="text-lg font-black text-white mb-5 pb-3 border-b border-white/5">Tus Datos</h2>
               <div className="space-y-3">
-                <input type="text"  name="name"  value={formData.name}  onChange={handleChange} required placeholder="Nombre completo *" className={inputClass} />
-                <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="Email *"            className={inputClass} />
-                <input type="tel"   name="phone" value={formData.phone} onChange={handleChange}         placeholder="Teléfono"             className={inputClass} />
+                <input type="text"  name="name"  value={formData.name}  onChange={handleChange} required placeholder="Nombre completo *" aria-label="Nombre completo" className={inputClass} />
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="Email *"            aria-label="Email" className={inputClass} />
+                <input type="tel"   name="phone" value={formData.phone} onChange={handleChange}         placeholder="Teléfono"             aria-label="Teléfono" className={inputClass} />
               </div>
             </div>
 
@@ -112,7 +112,7 @@ export default function PresupuestoPage() {
             <div>
               <h2 className="text-lg font-black text-white mb-5 pb-3 border-b border-white/5">Tu Proyecto</h2>
               <div className="space-y-3">
-                <select name="service"  value={formData.service}  onChange={handleChange} required className={selectClass}>
+                <select name="service"  value={formData.service}  onChange={handleChange} required aria-label="Servicio" className={selectClass}>
                   <option value="">Seleccioná un servicio *</option>
                   <option value="desarrollo-web">Desarrollo Web</option>
                   <option value="redes-sociales">Gestión de Redes Sociales</option>
@@ -121,14 +121,14 @@ export default function PresupuestoPage() {
                   <option value="google-mi-negocio">Google Mi Negocio</option>
                   <option value="fotografia">Fotografía</option>
                 </select>
-                <select name="siteType" value={formData.siteType} onChange={handleChange} className={selectClass}>
+                <select name="siteType" value={formData.siteType} onChange={handleChange} aria-label="Tipo de sitio" className={selectClass}>
                   <option value="">Tipo de sitio (si aplica)</option>
                   <option value="landing">Landing Page</option>
                   <option value="corporativo">Sitio Corporativo</option>
                   <option value="portfolio">Portfolio</option>
                   <option value="ecommerce">E-commerce</option>
                 </select>
-                <select name="budget" value={formData.budget} onChange={handleChange} className={selectClass}>
+                <select name="budget" value={formData.budget} onChange={handleChange} aria-label="Presupuesto estimado" className={selectClass}>
                   <option value="">Presupuesto estimado</option>
                   <option value="<100k">Menos de $100.000</option>
                   <option value="100k-250k">$100.000 - $250.000</option>
@@ -157,6 +157,7 @@ export default function PresupuestoPage() {
                 onChange={handleChange}
                 rows={5}
                 placeholder="Contanos más sobre tu proyecto, tus objetivos y cualquier detalle importante..."
+                aria-label="Detalles del proyecto"
                 className={inputClass + ' resize-none'}
               />
             </div>

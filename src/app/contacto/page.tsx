@@ -91,6 +91,7 @@ export default function ContactoPage() {
                   onChange={handleChange}
                   required
                   placeholder="Nombre *"
+                  aria-label="Nombre"
                   className={inputClass}
                 />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -101,6 +102,7 @@ export default function ContactoPage() {
                     onChange={handleChange}
                     required
                     placeholder="Email *"
+                    aria-label="Email"
                     className={inputClass}
                   />
                   <input
@@ -109,6 +111,7 @@ export default function ContactoPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Teléfono"
+                    aria-label="Teléfono"
                     className={inputClass}
                   />
                 </div>
@@ -116,6 +119,7 @@ export default function ContactoPage() {
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
+                  aria-label="Servicio de interés"
                   className={inputClass + ' [&>option]:bg-neutral-900 [&>option]:text-white'}
                 >
                   <option value="">Servicio de interés</option>
@@ -133,6 +137,7 @@ export default function ContactoPage() {
                   required
                   rows={6}
                   placeholder="Contanos tu proyecto... *"
+                  aria-label="Mensaje"
                   className={inputClass + ' resize-none'}
                 />
 

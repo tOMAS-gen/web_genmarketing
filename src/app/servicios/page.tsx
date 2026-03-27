@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { SERVICES } from '@/lib/constants';
@@ -58,7 +59,7 @@ export default function ServiciosPage() {
                   transition={{ delay: i * 0.07, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   className="group"
                 >
-                  <a href={`/servicios/${service.slug}`} className="block">
+                  <Link href={`/servicios/${service.slug}`} className="block">
                     <div className="flex items-center gap-5 md:gap-10 py-8 group-hover:translate-x-2 transition-transform duration-300">
                       <span className="text-xs font-black text-white/10 tabular-nums w-5 flex-shrink-0">
                         {String(i + 1).padStart(2, '0')}
@@ -76,7 +77,7 @@ export default function ServiciosPage() {
                       </p>
                       <ArrowRight className="w-5 h-5 text-white/10 group-hover:text-purple-400 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
                     </div>
-                  </a>
+                  </Link>
                 </motion.div>
               );
             })}

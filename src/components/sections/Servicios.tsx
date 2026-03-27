@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { SERVICES } from '@/lib/constants';
 import { ArrowRight } from 'lucide-react';
@@ -39,7 +40,7 @@ export function Servicios() {
                 transition={{ delay: i * 0.07, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 className="group"
               >
-                <a href={`/servicios/${service.slug}`} className="block">
+                <Link href={`/servicios/${service.slug}`} className="block">
                   <div className="flex items-center gap-5 md:gap-10 py-6 group-hover:translate-x-2 transition-transform duration-300">
                     {/* Number */}
                     <span className="text-xs font-black text-neutral-200 tabular-nums w-5 flex-shrink-0 leading-none">
@@ -66,7 +67,7 @@ export function Servicios() {
                     {/* Arrow */}
                     <ArrowRight className="w-4 h-4 text-neutral-200 group-hover:text-purple-500 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
                   </div>
-                </a>
+                </Link>
               </motion.div>
             );
           })}

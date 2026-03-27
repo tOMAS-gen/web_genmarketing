@@ -52,7 +52,7 @@ export const PLANS: Plan[] = [
   {
     id: '1',
     name: 'Accesible',
-    price: 150000,
+    price: 180000,
     description: 'Para emprendimientos que recién comienzan',
     features: [
       'Sitio web de una sola página',
@@ -66,7 +66,7 @@ export const PLANS: Plan[] = [
   {
     id: '2',
     name: 'Estándar',
-    price: 250000,
+    price: 300000,
     description: 'El plan más elegido para crecer',
     features: [
       'Sitio web profesional (hasta 5 páginas)',

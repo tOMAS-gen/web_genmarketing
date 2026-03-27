@@ -18,7 +18,7 @@ const words = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-neutral-950 flex flex-col">
+    <section className="relative overflow-hidden bg-neutral-950 flex flex-col min-h-screen">
       {/* Mesh */}
       <div className="absolute inset-0 mesh-bg-dark pointer-events-none" />
 
@@ -42,7 +42,7 @@ export function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 pt-28 pb-16 md:pt-36 md:pb-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 pt-28 pb-16 md:pt-36 md:pb-20 flex-1 flex flex-col justify-center">
 
         {/* Badge */}
         <motion.div
@@ -90,39 +90,21 @@ export function Hero() {
             transition={{ delay: 0.7, duration: 0.5 }}
             className="flex flex-col sm:flex-row gap-3"
           >
-            <Button href="/servicios" variant="primary" size="lg">
-              Ver Servicios
+            <Button href="/presupuesto" variant="primary" size="lg">
+              Pedir Presupuesto
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
             <Button
-              href="/presupuesto"
+              href="/servicios"
               variant="outline"
               size="lg"
               className="border-neutral-700 text-neutral-200 hover:bg-white/5 hover:border-neutral-500"
             >
-              Pedir Presupuesto
+              Ver Servicios
             </Button>
           </motion.div>
         </div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.85 }}
-          className="mt-16 pt-8 border-t border-white/10 flex items-center gap-10 flex-wrap"
-        >
-          {[
-            { value: '+50', label: 'Proyectos realizados' },
-            { value: '+30', label: 'Clientes felices' },
-            { value: '4.9★', label: 'Calificación promedio' },
-          ].map((s) => (
-            <div key={s.label}>
-              <div className="text-2xl font-black text-white">{s.value}</div>
-              <div className="text-xs text-neutral-500 font-medium mt-0.5">{s.label}</div>
-            </div>
-          ))}
-        </motion.div>
       </div>
 
       {/* Marquee ticker */}

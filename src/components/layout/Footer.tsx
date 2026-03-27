@@ -40,8 +40,8 @@ export function Footer() {
           {/* Column 1: Logo & Social */}
           <div className="space-y-5">
             <div className="flex items-baseline gap-0">
-              <span className="text-purple-400 font-semibold text-xl pl-0.5" style={{ fontFamily: "'Montserrat', sans-serif" }}>›gen</span>
-              <span className="text-white font-medium text-xl" style={{ fontFamily: "'Montserrat', sans-serif" }}>marketing</span>
+              <span className="text-purple-400 font-semibold text-xl pl-0.5">›gen</span>
+              <span className="text-white font-medium text-xl">marketing</span>
             </div>
             <p className="text-sm text-neutral-500 leading-relaxed">
               Agencia digital especializada en diseño web, redes sociales y branding.

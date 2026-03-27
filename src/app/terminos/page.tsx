@@ -1,16 +1,19 @@
-import { SectionTitle } from '@/components/ui/SectionTitle';
+import type { Metadata } from 'next';
 import { CONTACT_INFO } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  title: 'Términos y Condiciones',
+  description: 'Términos y condiciones de uso del sitio web y servicios de ›genmarketing, agencia de marketing digital en Mendoza, Argentina.',
+  alternates: { canonical: 'https://genmarketing.com.ar/terminos' },
+};
 
 export default function TerminosPage() {
   return (
     <main className="py-20 md:py-32">
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <SectionTitle
-            title="Términos y Condiciones"
-            subtitle="›genmarketing - Última actualización: 2024"
-            align="left"
-          />
+          <h1 className="text-4xl md:text-5xl font-black text-black leading-tight mb-2">Términos y Condiciones</h1>
+          <p className="text-neutral-400 text-sm">›genmarketing — Última actualización: 2024</p>
         </div>
 
         <div className="space-y-8 text-neutral-700">

@@ -1,7 +1,18 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL, SERVICES, PORTFOLIO_PROJECTS } from '@/lib/constants';
 
-const BLOG_SLUGS = ['tips-instagram', 'seo-guia-completa', 'branding-identidad-visual'];
+const BLOG_SLUGS = [
+  'optimizar-google-my-business-mendoza',
+  'chatbots-ia-whatsapp-pymes-argentina',
+  'diseno-web-tendencias-pymes-2026',
+  'instagram-vs-tiktok-marcas-argentina',
+  'seo-geo-motores-ia-2026',
+  'branding-emprendedores-marca-desde-cero',
+  'guia-redes-sociales-pymes-contenido',
+  'por-que-necesitas-pagina-web-profesional-mendoza',
+  'estrategias-marketing-digital-bajo-presupuesto-pymes',
+  'inteligencia-artificial-marketing-herramientas-practicas',
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL;

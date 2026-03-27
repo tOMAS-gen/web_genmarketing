@@ -42,10 +42,10 @@ export function Header() {
 
         {/* Logo */}
         <Link href="/" className="flex items-baseline gap-0 group select-none" aria-label="Inicio">
-          <span className="text-[1.45rem] font-semibold text-purple-400 transition-colors duration-200 group-hover:text-purple-300" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          <span className="text-[1.45rem] font-semibold text-purple-400 transition-colors duration-200 group-hover:text-purple-300">
             ›gen
           </span>
-          <span className="text-[1.45rem] font-medium text-white transition-colors duration-200 group-hover:text-neutral-200" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          <span className="text-[1.45rem] font-medium text-white transition-colors duration-200 group-hover:text-neutral-200">
             marketing
           </span>
         </Link>

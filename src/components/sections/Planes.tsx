@@ -26,6 +26,7 @@ export function Planes() {
             Planes y Precios
           </h2>
           <p className="text-neutral-400 text-lg max-w-md mx-auto">Elige el plan perfecto para tu negocio</p>
+          <p className="text-purple-400/80 text-sm font-medium mt-3">Cupos limitados por mes — Asegurá tu lugar</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 items-stretch">
@@ -73,15 +74,25 @@ export function Planes() {
               {/* Price */}
               <div className="mb-7 pb-7 border-b border-white/10">
                 {plan.price > 0 ? (
-                  <div className="flex items-baseline gap-2">
-                    <span className={cn(
-                      'text-4xl font-bold tracking-tight',
-                      plan.highlighted ? 'gradient-text' : 'text-white'
-                    )}>
-                      ${plan.price.toLocaleString('es-AR')}
-                    </span>
-                    <span className="text-neutral-400 text-sm">/proyecto</span>
-                  </div>
+                  <>
+                    <div className="flex items-baseline gap-2">
+                      <span className={cn(
+                        'text-4xl font-bold tracking-tight',
+                        plan.highlighted ? 'gradient-text' : 'text-white'
+                      )}>
+                        ${plan.price.toLocaleString('es-AR')}
+                      </span>
+                      <span className="text-neutral-400 text-sm">/proyecto</span>
+                    </div>
+                    <div className="flex items-baseline gap-2 mt-2">
+                      <span className="text-purple-400 text-lg font-bold">
+                        ${Math.round(plan.price / 1.21).toLocaleString('es-AR')}
+                      </span>
+                      <span className="text-neutral-500 text-xs font-medium uppercase tracking-wide">
+                        Precio sin impuestos nacionales
+                      </span>
+                    </div>
+                  </>
                 ) : (
                   <div className="text-2xl font-bold text-white">
                     A presupuestar

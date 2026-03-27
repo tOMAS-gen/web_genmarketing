@@ -6,4 +6,5 @@ node_modules
 docker-compose.yml
 .env*.local
 .env
+!.env.production
 .DS_Store

@@ -15,12 +15,6 @@ const features = [
   { icon: Clock, title: 'Respuesta en <24h', description: 'Atención ágil: respondemos en menos de 24 horas hábiles' },
 ];
 
-const stats = [
-  { value: '+50', label: 'Proyectos' },
-  { value: '+30', label: 'Clientes' },
-  { value: '3+',  label: 'Años' },
-  { value: '4.9', label: 'Estrellas' },
-];
 
 export function SobreNosotros() {
   return (
@@ -56,22 +50,6 @@ export function SobreNosotros() {
           <p className="text-lg md:text-xl text-neutral-400 font-medium max-w-2xl mx-auto">
             Somos un equipo de apasionados por el diseño y la tecnología digital
           </p>
-        </motion.div>
-
-        {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1, duration: 0.55 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20"
-        >
-          {stats.map((s) => (
-            <div key={s.label} className="text-center glass-dark rounded-2xl py-7 px-4">
-              <div className="text-4xl font-bold gradient-text mb-1">{s.value}</div>
-              <div className="text-neutral-400 text-sm font-medium">{s.label}</div>
-            </div>
-          ))}
         </motion.div>
 
         {/* Mission + Features */}
