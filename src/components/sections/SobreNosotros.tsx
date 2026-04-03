@@ -48,7 +48,7 @@ export function SobreNosotros() {
             ›genmarketing
           </h2>
           <p className="text-lg md:text-xl text-neutral-400 font-medium max-w-2xl mx-auto">
-            Somos un equipo de apasionados por el diseño y la tecnología digital
+            Somos el equipo de marketing digital de ›gen, empresa tecnológica argentina.
           </p>
         </motion.div>
 
@@ -81,8 +81,8 @@ export function SobreNosotros() {
             {features.map((f) => {
               const Icon = f.icon;
               return (
-                <div key={f.title} className="flex items-start gap-4 glass-dark rounded-xl p-5">
-                  <div className="p-2.5 bg-purple-700/40 rounded-lg flex-shrink-0">
+                <div key={f.title} className="flex items-start gap-4 glass-dark rounded-xl p-5 hover:border-purple-700/40 transition-all duration-300 group/feat">
+                  <div className="p-2.5 bg-purple-700/40 rounded-lg flex-shrink-0 group-hover/feat:bg-purple-600/50 group-hover/feat:scale-105 transition-all duration-300">
                     <Icon className="w-5 h-5 text-purple-300" />
                   </div>
                   <div>
@@ -113,10 +113,11 @@ export function SobreNosotros() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08, duration: 0.45 }}
-                  className="glass-dark rounded-2xl p-6 hover:-translate-y-1 hover:border-purple-700/50 transition-all duration-300 group"
+                  whileHover={{ y: -6, transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] } }}
+                  className="glass-dark rounded-2xl p-6 hover:border-purple-700/50 hover:shadow-[0_0_32px_rgba(147,51,234,0.15)] transition-[border-color,box-shadow] duration-300 group"
                 >
-                  <div className="mb-4 w-10 h-10 rounded-xl bg-purple-800/50 flex items-center justify-center group-hover:bg-purple-700/60 transition-colors">
-                    <Icon className="w-5 h-5 text-purple-300" />
+                  <div className="mb-4 w-10 h-10 rounded-xl bg-purple-800/50 flex items-center justify-center group-hover:bg-purple-700/60 group-hover:scale-110 transition-all duration-300">
+                    <Icon className="w-5 h-5 text-purple-300 group-hover:text-purple-200 transition-colors duration-300" />
                   </div>
                   <h4 className="font-bold text-white mb-2">{v.title}</h4>
                   <p className="text-neutral-500 text-sm leading-relaxed">{v.description}</p>

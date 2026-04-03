@@ -5,7 +5,17 @@ import { Button } from '@/components/ui/Button';
 import { ArrowRight, Mail } from 'lucide-react';
 import { CONTACT_INFO } from '@/lib/constants';
 
-const vp = { once: true, amount: 0 };
+const headingWords =
+  'Tu próximo cliente ya está buscando lo que ofrecés. ¿Está encontrando tu negocio?'.split(' ');
+
+const wordVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.04, duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
+  }),
+};
 
 export function CTA() {
   return (
@@ -28,35 +38,41 @@ export function CTA() {
 
         {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, y: -12 }}
+          initial={{ opacity: 0, y: -14 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={vp}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-8"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold
-            bg-purple-900/50 text-purple-300 border border-purple-700/40 mb-8">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-purple-900/50 text-purple-300 border border-purple-700/40">
             <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
             Sin compromiso · Sin costo oculto
           </span>
         </motion.div>
 
-        {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={vp}
-          transition={{ delay: 0.1, duration: 0.6 }}
-          className="text-4xl md:text-6xl font-bold tracking-tight text-balance gradient-text-white mb-6 pb-1"
-        >
-          ¿Listo para llevar tu marca al siguiente nivel?
-        </motion.h2>
+        {/* Heading — word-by-word reveal */}
+        <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-balance gradient-text-white mb-6 pb-1 leading-tight">
+          {headingWords.map((word, i) => (
+            <motion.span
+              key={i}
+              custom={i}
+              variants={wordVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              className="inline-block mr-[0.26em]"
+            >
+              {word}
+            </motion.span>
+          ))}
+        </h2>
 
         {/* Subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={vp}
-          transition={{ delay: 0.15, duration: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="text-xl text-neutral-400 font-medium mb-10 max-w-xl mx-auto leading-relaxed"
         >
           Hablemos de tu proyecto. Respuesta garantizada en menos de 24 horas.
@@ -64,10 +80,10 @@ export function CTA() {
 
         {/* Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 14 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={vp}
-          transition={{ delay: 0.2, duration: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
         >
           <Button href="/presupuesto" variant="primary" size="lg">
@@ -88,14 +104,16 @@ export function CTA() {
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={vp}
-          transition={{ delay: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
           className="text-neutral-500 text-sm flex items-center justify-center gap-2"
         >
           <Mail className="w-3.5 h-3.5" />
           O escríbenos directamente a{' '}
-          <a href={`mailto:${CONTACT_INFO.email}`}
-            className="text-purple-400 hover:text-purple-300 transition-colors font-medium">
+          <a
+            href={`mailto:${CONTACT_INFO.email}`}
+            className="text-purple-400 hover:text-purple-300 transition-colors font-medium"
+          >
             {CONTACT_INFO.email}
           </a>
         </motion.p>

@@ -238,6 +238,56 @@ button {
 .delay-500 { animation-delay: 500ms; }
 .delay-600 { animation-delay: 600ms; }
 
+/* ─── Plan Card Tilt 3D ────────────────────────────────── */
+.plan-card-tilt {
+  transition: transform 0.35s cubic-bezier(0.03, 0.98, 0.52, 0.99), box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.plan-card-tilt:hover .hover-glow-overlay {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plan-card-tilt {
+    transition: box-shadow 0.3s ease;
+  }
+  .plan-card-tilt:hover .hover-glow-overlay {
+    opacity: 0;
+  }
+}
+
+/* ─── Reduced Motion ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-float,
+  .animate-float-slow,
+  .animate-pulse-glow,
+  .animate-spin-slow,
+  .animate-marquee,
+  .shimmer-text {
+    animation: none;
+  }
+
+  .shimmer-text {
+    -webkit-text-fill-color: unset;
+    color: #c084fc;
+  }
+
+  .glow-card:hover {
+    transform: none;
+  }
+}
+
 /* ─── Focus ─────────────────────────────────────────────── */
 :focus-visible {
   outline: 2px solid #9333ea;

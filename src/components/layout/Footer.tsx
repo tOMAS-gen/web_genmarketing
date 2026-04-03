@@ -1,6 +1,11 @@
+'use client';
+
+import { useRef } from 'react';
 import Link from 'next/link';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { SOCIAL_LINKS, CONTACT_INFO } from '@/lib/constants';
+import { gsap } from '@/lib/gsap';
+import { useGSAP } from '@gsap/react';
 
 /* SVG icons inline para evitar bugs de lucide-react con LinkedIn */
 function InstagramIcon() {
@@ -29,13 +34,49 @@ function WhatsAppIcon() {
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const footerRef = useRef<HTMLElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    const columns = gridRef.current?.children;
+    if (columns?.length) {
+      gsap.from(Array.from(columns), {
+        scrollTrigger: {
+          trigger: gridRef.current,
+          start: 'top 90%',
+          once: true,
+        },
+        opacity: 0,
+        y: 32,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power3.out',
+      });
+    }
+
+    gsap.from(bottomRef.current, {
+      scrollTrigger: {
+        trigger: bottomRef.current,
+        start: 'top 95%',
+        once: true,
+      },
+      opacity: 0,
+      y: 16,
+      duration: 0.5,
+      ease: 'power2.out',
+    });
+  }, { scope: footerRef });
 
   return (
-    <footer className="bg-neutral-950 text-neutral-400 py-16 md:py-20">
+    <footer ref={footerRef} className="bg-neutral-950 text-neutral-400 py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
 
           {/* Column 1: Logo & Social */}
           <div className="space-y-5">
@@ -126,7 +167,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-600">
+        <div ref={bottomRef} className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-600">
           <p>© {currentYear} <span className=" font-semibold pl-0.5">›gen</span>marketing. Todos los derechos reservados.</p>
           <div className="flex items-center gap-6">
             <Link href="/politica-privacidad" className="hover:text-neutral-300 transition-colors">
